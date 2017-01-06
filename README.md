@@ -1,4 +1,4 @@
-simcoe
+ROASSt
 ======
 
-A Symfony project created on January 6, 2017, 10:50 am.
+A REST, Oauth, API, Symfony Skeleton
