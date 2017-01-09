@@ -33,4 +33,19 @@ class User extends BaseUser
     {
         parent::__construct();
     }
+
+    /**
+     * Required to make the username field happy
+     *
+     * @param string $email
+     *
+     * @return $this
+     */
+    public function setEmail($email)
+    {
+        parent::setEmail($email);
+        parent::setUsername($email);
+
+        return $this;
+    }
 }
