@@ -21,10 +21,16 @@ class LoadAdmin implements FixtureInterface, ContainerAwareInterface
      */
     public function load(ObjectManager $manager)
     {
+        $clientManager = $this->container->get('fos_oauth_server.client_manager.default');
         $userManager = $this->container->get('fos_user.user_manager');
 
-        $admin = $userManager->createUser();
+        $client = $clientManager->createClient();
+        $client->setRedirectUris(array('localhost'));
+        $client->setAllowedGrantTypes(array('token', 'authorization_code'));
 
+        $clientManager->updateClient($client);
+
+        $admin = $userManager->createUser();
         $admin->setEmail('admin@example.com')
               ->setPlainPassword('test1234')
               ->setEnabled(TRUE)
