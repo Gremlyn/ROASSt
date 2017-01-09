@@ -5,10 +5,7 @@ namespace Application\Migrations;
 use Doctrine\DBAL\Migrations\AbstractMigration;
 use Doctrine\DBAL\Schema\Schema;
 
-/**
- * Auto-generated Migration: Please modify to your needs!
- */
-class Version0 extends AbstractMigration
+class Version1 extends AbstractMigration
 {
     /**
      * @param Schema $schema
