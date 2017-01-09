@@ -1,6 +1,6 @@
 {
-    "name": "colin/simcoe",
-    "license": "proprietary",
+    "name": "gremlyn/roasst",
+    "license": "none",
     "type": "project",
     "autoload": {
         "psr-4": {
