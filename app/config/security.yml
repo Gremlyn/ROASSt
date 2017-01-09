@@ -29,6 +29,3 @@ security:
             fos_oauth: true
             stateless: true
             anonymous: false
-
-    encoders:
-        FOS\UserBundle\Model\UserInterface: sha512
