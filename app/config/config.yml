@@ -69,7 +69,7 @@ swiftmailer:
 
 fos_user:
     db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
-    firewall_name: main
+    firewall_name: api
     user_class: AppBundle\Entity\User
 
 fos_oauth_server:
@@ -92,15 +92,11 @@ fos_rest:
             html: true
         mime_types:
             json: ['application/json', 'application/json;version=1.0', 'application/json;version=1.1']
-            jpg: 'image/jpeg'
-            png: 'image/png'
+            jpg: ['image/jpeg']
+            png: ['image/png']
     body_listener: true
     param_fetcher_listener: true
     allowed_methods_listener: true
     format_listener:
         rules:
             - { path: ^/, priorities: [html, json], fallback_format: json, prefer_extension: false }
-
-#fos_rest:
-#    routing_loader:
-#        default_format: html

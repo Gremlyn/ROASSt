@@ -12,13 +12,9 @@ security:
             id: fos_user.user_provider.username_email  # fos_user.user_provider.username_email does not seem to work (OAuth-spec related ("username + password") ?)
 
     firewalls:
-        # disables authentication for assets and the profiler, adapt it according to your needs
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
-
-        main:
-            anonymous: ~
 
         oauth_token:
             pattern: ^/oauth/v2/token
@@ -29,3 +25,6 @@ security:
             fos_oauth: true
             stateless: true
             anonymous: false
+
+    access_control:
+        - { path: ^/api, roles: [ IS_AUTHENTICATED_FULLY ] }

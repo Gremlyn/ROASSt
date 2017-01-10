@@ -1,0 +1,4 @@
+users:
+    resource: AppBundle\Controller\UserController
+    prefix:   /api
+    type:     rest
