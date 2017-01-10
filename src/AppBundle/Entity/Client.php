@@ -3,8 +3,8 @@
 namespace AppBundle\Entity;
 
 use AppBundle\Entity\Traits\TimestampTrait;
-use FOS\OAuthServerBundle\Entity\Client as BaseClient;
 use Doctrine\ORM\Mapping as ORM;
+use FOS\OAuthServerBundle\Entity\Client as BaseClient;
 
 /**
  * Client
@@ -27,10 +27,37 @@ class Client extends BaseClient
     protected $id;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(type="string")
+     */
+    protected $name;
+
+    /**
      * Client constructor.
      */
     public function __construct()
     {
         parent::__construct();
+    }
+
+    /**
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param string $name
+     *
+     * @return Client
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
     }
 }
