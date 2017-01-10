@@ -25,8 +25,16 @@ class LoadAdmin implements FixtureInterface, ContainerAwareInterface
         $userManager = $this->container->get('fos_user.user_manager');
 
         $client = $clientManager->createClient();
-        $client->setRedirectUris(array('localhost'));
-        $client->setAllowedGrantTypes(array('token', 'authorization_code'));
+        $client->setRedirectUris(['localhost']);
+        $client->setAllowedGrantTypes(
+            [
+                'authorization_code',
+                'client_credentials',
+                'password',
+                'refresh_token',
+                'token'
+            ]
+        );
 
         $clientManager->updateClient($client);
 
