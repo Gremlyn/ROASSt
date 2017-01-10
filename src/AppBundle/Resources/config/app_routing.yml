@@ -1,4 +1,4 @@
+# routes for the app to use
 users:
     resource: AppBundle\Controller\UserController
-    prefix:   /api
     type:     rest
