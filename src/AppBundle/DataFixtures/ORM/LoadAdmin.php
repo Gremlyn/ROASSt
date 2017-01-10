@@ -25,7 +25,7 @@ class LoadAdmin implements FixtureInterface, ContainerAwareInterface
         $userManager = $this->container->get('fos_user.user_manager');
 
         $api_client = $clientManager->createClient();
-        $api_client->getName('API Client');
+        $api_client->setName('API Client');
         $api_client->setRedirectUris(['localhost']);
         $api_client->setAllowedGrantTypes(
             [
@@ -40,7 +40,7 @@ class LoadAdmin implements FixtureInterface, ContainerAwareInterface
         $clientManager->updateClient($api_client);
 
         $app_client = $clientManager->createClient();
-        $app_client->getName('App Client');
+        $app_client->setName('App Client');
         $app_client->setRedirectUris(['localhost']);
         $app_client->setAllowedGrantTypes(
             [
